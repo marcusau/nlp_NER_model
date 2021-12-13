@@ -1,7 +1,7 @@
 # nlp_NER_model
 
 
-#### Each of data source folders contain four key scripts:
+#### 输入数据格式请处理成BIO格式，如下：
     集 B-ORG
     團 I-ORG
     透 O
@@ -60,8 +60,8 @@
     率 I-TERM
     。 O
 
-#### Each of data source folders contain four key scripts:
-    source_api.py  (structure requests function of external APIs in python scope)
-    schema.py (contains object-oriented (OOP) data model structure of data incoming from external APIs)
-    db_table.py ( contains tables' structure and relationship of mysql db in term of python scope)
-    CRUD.py  ( contains data-fetch functions of external APIs and Data I/O functions between modules and SQLDB )
+#### Key dependencies
+    python (>= 3.7.9)
+    pytorch (>= 1.8) (cpu version for deployment, gpu version for development) (https://pytorch.org/)
+    pytorch-crf == 1.2 (https://github.com/statech/pytorchCRF)
+    transformers == 4.5.1  (https://github.com/huggingface/transformers)         
