@@ -3,7 +3,7 @@
 
 
 ### hyperparameter to control computing resources
-![](pic/workers.JPG)
+![](pic/input_output_example.JPG)
  
 
 ### Name Entity definition
