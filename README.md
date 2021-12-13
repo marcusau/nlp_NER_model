@@ -1,7 +1,7 @@
 # nlp_NER_model
 
 
-#### 输入数据格式请处理成BIO格式，如下：
+#### input of training model in BIO format：
     集 B-ORG
     團 I-ORG
     透 O
@@ -67,5 +67,16 @@
     transformers == 4.5.1  (https://github.com/huggingface/transformers)         
 
 
+#### Pre-trained model downloaded and saved
+[download_transformers_models_iipynb.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/download_transformers_models_iipynb.ipynb)
+
+
 #### Model training
 [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
+
+
+#### Model conversion from fp32 to fp16
+[convert_model_to_fp16.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/convert_model_to_fp16.ipynb)
+
+#### Deployment
+[deployment.py](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
