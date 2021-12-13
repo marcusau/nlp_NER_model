@@ -2,6 +2,8 @@
 
 This repository aims to implement Name Entity Recognition (NER) work based on google's pretrained BERT model and BiLSTM-CRF network! 
 
+The model strucuture is reproduction of this repository : https://github.com/hertz-pj/BERT-BiLSTM-CRF-NER-pytorch
+
 This mode design is focusing on handling Chinese data from ETNET financial news and lifestyle financial articles. For textual data outside these scopes, e.g. ETNET DIVA and SoIN, etc., pleease retrain the model with relevant corpus.
 
 This project is built on Python3.7 or above
@@ -96,8 +98,17 @@ User can  modify the name entity categories if the domain application is non-fin
     率 I-TERM
     。 O
 
+User can use the follow annotation tools to produce your own dataset:
+1. https://prodi.gy/features/named-entity-recognition
+2. https://github.com/doccano/doccano
 
+Please provide clear definition your own name entity categories before labelling.
 
+For the whole dataset in [data folder](https://github.com/etnetapp-dev/nlp_NER_model/tree/master/data) , the labelling process was taken about 2.5 months to complete.
+
+After data annotation, please split the whole dataset of BIO format into train.txt and dev.txt. By default, the train/dev split is 80%/20%. The ratio can be adjusted according to your requirements.
+
+After split off dataset, please use the the section 7.4 of [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/bert_bilstm_crf_ner_training.ipynb) which can produce the [label.txt](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/data/labels.txt) by taking input of [train.zip](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/data/train.zip)
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
