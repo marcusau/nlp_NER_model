@@ -2,6 +2,9 @@
 
 implement NER work based on google's BERT code and BiLSTM-CRF network! This project may be more close to process Chinese data.
 
+THIS PROJECT ONLY SUPPORT Python3.
+
+
 ### Input and output of [model deployment](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
 ![](pic/input_output_example.JPG)
  
@@ -10,6 +13,9 @@ implement NER work based on google's BERT code and BiLSTM-CRF network! This proj
 ![](pic/ner_desc.JPG)
  
 
+Data
+首先将数据处理成BIO格式，processed文件夹下存放的是医疗命名实体识别的数据，代码可参考data_process.ipynb
+下载中文BERT预训练模型,来自pytorch-pretrained-bert
 
 #### input of training model in BIO format：
     集 B-ORG
@@ -75,6 +81,9 @@ implement NER work based on google's BERT code and BiLSTM-CRF network! This proj
     pytorch (>= 1.8) (cpu version for deployment, gpu version for development) (https://pytorch.org/)
     pytorch-crf == 1.2 (https://github.com/statech/pytorchCRF)
     transformers == 4.5.1  (https://github.com/huggingface/transformers)         
+
+
+
 
 
 #### Pre-trained model downloaded and saved
