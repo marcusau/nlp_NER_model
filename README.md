@@ -86,6 +86,9 @@ implement NER work based on google's BERT code and BiLSTM-CRF network! This proj
 #### Model training
 [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
 
+#### Name Entity accuracy of model training
+![](pic/model_accuracy_result.JPG)
+
 #### Trained model set and relevant file 
 ![](pic/train_bert_modelset.JPG)
 
