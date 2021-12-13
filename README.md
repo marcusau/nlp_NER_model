@@ -2,7 +2,7 @@
 
 implement NER work based on google's BERT code and BiLSTM-CRF network! This project may be more close to process Chinese data.
 
-### Input and output of model deployment
+### Input and output of [model deployment](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
 ![](pic/input_output_example.JPG)
  
 
