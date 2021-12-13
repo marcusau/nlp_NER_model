@@ -1,12 +1,17 @@
 # nlp_NER_model
 
-implement NER work based on google's BERT code and BiLSTM-CRF network! This project may be more close to process Chinese data.
+This repository aims to implement Name Entity Recognition (NER) work based on google's pretrained BERT model and BiLSTM-CRF network! 
 
-THIS PROJECT ONLY SUPPORT Python3.
+This mode design is focusing on handling Chinese data from ETNET financial news and lifestyle financial articles. For textual data outside these scopes, e.g. ETNET DIVA and SoIN, etc., pleease retrain the model with relevant corpus.
 
+This project is built on Python3.7 or above
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Input and output of [model deployment](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
 ![](pic/input_output_example.JPG)
+ 
+ 
  
 
 ### Name Entity definition
