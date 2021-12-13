@@ -1,6 +1,16 @@
 # nlp_NER_model
 
 
+
+### hyperparameter to control computing resources
+![](pic/workers.JPG)
+ 
+
+### Name Entity definition
+![](ner_desc.JPG)
+ 
+
+
 #### input of training model in BIO format：
     集 B-ORG
     團 I-ORG
