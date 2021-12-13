@@ -12,8 +12,17 @@ THIS PROJECT ONLY SUPPORT Python3.
 ### Name Entity definition
 ![](pic/ner_desc.JPG)
  
+#### Key dependencies
+    python (>= 3.7.9)
+    pytorch (>= 1.8) (cpu version for deployment, gpu version for development) (https://pytorch.org/)
+    pytorch-crf == 1.2 (https://github.com/statech/pytorchCRF)
+    transformers == 4.5.1  (https://github.com/huggingface/transformers)         
+    
+    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Data
+### Preparation of model training
+- Convert training data
 首先将数据处理成BIO格式，processed文件夹下存放的是医疗命名实体识别的数据，代码可参考data_process.ipynb
 下载中文BERT预训练模型,来自pytorch-pretrained-bert
 
@@ -76,15 +85,11 @@ Data
     率 I-TERM
     。 O
 
-#### Key dependencies
-    python (>= 3.7.9)
-    pytorch (>= 1.8) (cpu version for deployment, gpu version for development) (https://pytorch.org/)
-    pytorch-crf == 1.2 (https://github.com/statech/pytorchCRF)
-    transformers == 4.5.1  (https://github.com/huggingface/transformers)         
 
 
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #### Pre-trained model downloaded and saved
 [download_transformers_models_iipynb.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/download_transformers_models_iipynb.ipynb)
@@ -92,6 +97,7 @@ Data
 ### Pretrained model set and relevant file after downloaded
 ![](pic/pretrain_bert_modelset.JPG)
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Model training
 [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
 
@@ -101,9 +107,13 @@ Data
 #### Trained model set and relevant file 
 ![](pic/train_bert_modelset.JPG)
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+ changing model precision (from FP32 to FP16)  
 #### Model conversion from fp32 to fp16
 [convert_model_to_fp16.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/convert_model_to_fp16.ipynb)
+
+ changing model precision (from FP32 to FP16) 
 
 #### Deployment
 [deployment.py](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
