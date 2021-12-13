@@ -110,7 +110,9 @@ User can  modify the name entity categories if the domain application is non-fin
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Model training
-[bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
+The training of BERT-Bi-LSTM-CRF model requires intensive GPU resources, thus, we strongly suggest to use google colab as training platform and please select the GPU instance of in colab before training and download the APEX package in order to speed up the training processing.
+
+For detail, please refer to [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
 
 #### Name Entity accuracy of model training
 ![](pic/model_accuracy_result.JPG)
@@ -120,14 +122,14 @@ User can  modify the name entity categories if the domain application is non-fin
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- changing model precision (from FP32 to FP16)  
+ 
 #### Model conversion from fp32 to fp16
 [convert_model_to_fp16.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/convert_model_to_fp16.ipynb)
 
-BERT-base is model contains 110M parameters.  It’s hard to deploy a model of such size into many environments with limited resources
- changing model precision (from FP32 to FP16)  compress and speed-up NN models have been developed.
- Typically models trained using FP32 (32-bit floating point), then they can be quantized into FP16 (16-bit floating point), so reducing the model size 2x . 
- This is called post-training quantization.
+BERT-base is model contains 110M parameters which is large to deploy in production environment with no-GPU resources. To reduce the resource consumption, we adopt post-training quantization technique by changing model precision (from FP32 (32-bit floating point) to P16 (16-bit floating point)) which can compress and speed-up model inferernce speed.
+
+After the change of precision, the model size is reduced from more than ~700M to ~500M.
+
 
 #### Deployment
 [deployment.py](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
