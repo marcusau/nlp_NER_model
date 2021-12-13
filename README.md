@@ -132,4 +132,4 @@ After the change of precision, the model size is reduced from more than ~700M to
 
 
 #### Deployment
-[deployment.py](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
+[deployment.py](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/deployment.py)
