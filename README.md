@@ -1,9 +1,9 @@
 # nlp_NER_model
 
+implement NER work based on google's BERT code and BiLSTM-CRF network! This project may be more close to process Chinese data.
 
-
-### hyperparameter to control computing resources
-![](pic/workers.JPG)
+### Input and output of model deployment
+![](pic/input_output_example.JPG)
  
 
 ### Name Entity definition
@@ -80,9 +80,14 @@
 #### Pre-trained model downloaded and saved
 [download_transformers_models_iipynb.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/download_transformers_models_iipynb.ipynb)
 
+### Pretrained model set and relevant file after downloaded
+![](pic/pretrain_bert_modelset.JPG)
 
 #### Model training
 [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
+
+#### Trained model set and relevant file 
+![](pic/train_bert_modelset.JPG)
 
 
 #### Model conversion from fp32 to fp16
