@@ -65,3 +65,7 @@
     pytorch (>= 1.8) (cpu version for deployment, gpu version for development) (https://pytorch.org/)
     pytorch-crf == 1.2 (https://github.com/statech/pytorchCRF)
     transformers == 4.5.1  (https://github.com/huggingface/transformers)         
+
+
+#### Model training
+    [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
