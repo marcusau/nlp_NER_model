@@ -7,7 +7,7 @@
  
 
 ### Name Entity definition
-![](ner_desc.JPG)
+![](pic/ner_desc.JPG)
  
 
 
