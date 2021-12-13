@@ -11,12 +11,19 @@ This project is built on Python3.7 or above
 ### Input and output of [model deployment](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
 ![](pic/input_output_example.JPG)
  
- 
- 
+For deployment, the model take string of sentence with no more than 128 characters as input and return a json of vocabularies (as keys) and corresponding name entities (as values). 
 
+For sentences with more than 128 characters, please split off the sentences by delimiters (e.g. full-stop or comma) or by truncating the characters after the 128th index before imputting procedure.
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Name Entity definition
 ![](pic/ner_desc.JPG)
  
+There are 24 defined name entities to training the models and the name entities are designed to capture full semantic meaning of financial related articles. 
+
+User can  modify the name entity categories if the domain application is non-financial text information.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Key dependencies
     python (>= 3.7.9)
     pytorch (>= 1.8) (cpu version for deployment, gpu version for development) (https://pytorch.org/)
@@ -27,9 +34,8 @@ This project is built on Python3.7 or above
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Preparation of model training
-- Convert training data
-首先将数据处理成BIO格式，processed文件夹下存放的是医疗命名实体识别的数据，代码可参考data_process.ipynb
-下载中文BERT预训练模型,来自pytorch-pretrained-bert
+    Convert training dataset into BIO format (B for beginning, I for intermediate, O for omit) shown below
+    Download the google's pretained bert model to local folder path by following the command in [download_transformers_models_iipynb.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/download_transformers_models_iipynb.ipynb)
 
 #### input of training model in BIO format：
     集 B-ORG
