@@ -113,7 +113,10 @@ THIS PROJECT ONLY SUPPORT Python3.
 #### Model conversion from fp32 to fp16
 [convert_model_to_fp16.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/convert_model_to_fp16.ipynb)
 
- changing model precision (from FP32 to FP16) 
+BERT-base is model contains 110M parameters.  It’s hard to deploy a model of such size into many environments with limited resources
+ changing model precision (from FP32 to FP16)  compress and speed-up NN models have been developed.
+ Typically models trained using FP32 (32-bit floating point), then they can be quantized into FP16 (16-bit floating point), so reducing the model size 2x . 
+ This is called post-training quantization.
 
 #### Deployment
 [deployment.py](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
