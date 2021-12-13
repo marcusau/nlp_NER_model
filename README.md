@@ -103,7 +103,7 @@ User can  modify the name entity categories if the domain application is non-fin
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #### Pre-trained model downloaded and saved
-[download_transformers_models_iipynb.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/download_transformers_models_iipynb.ipynb)
+[download_transformers_models_iipynb.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/download_transformers_models_iipynb.ipynb)
 
 ### Pretrained model set and relevant file after downloaded
 ![](pic/pretrain_bert_modelset.JPG)
@@ -112,7 +112,7 @@ User can  modify the name entity categories if the domain application is non-fin
 #### Model training
 The training of BERT-Bi-LSTM-CRF model requires intensive GPU resources, thus, we strongly suggest to use google colab as training platform and please select the GPU instance of in colab before training and download the APEX package in order to speed up the training processing.
 
-For detail, please refer to [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
+For detail, please refer to [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/bert_bilstm_crf_ner_training.ipynb)
 
 #### Name Entity accuracy of model training
 ![](pic/model_accuracy_result.JPG)
@@ -124,7 +124,7 @@ For detail, please refer to [bert_bilstm_crf_ner_training.ipynb](https://github.
 
  
 #### Model conversion from fp32 to fp16
-[convert_model_to_fp16.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/convert_model_to_fp16.ipynb)
+[convert_model_to_fp16.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/convert_model_to_fp16.ipynb)
 
 BERT-base is model contains 110M parameters which is large to deploy in production environment with no-GPU resources. To reduce the resource consumption, we adopt post-training quantization technique by changing model precision (from FP32 (32-bit floating point) to P16 (16-bit floating point)) which can compress and speed-up model inferernce speed.
 
