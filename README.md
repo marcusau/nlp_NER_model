@@ -125,6 +125,8 @@ The training of BERT-Bi-LSTM-CRF model requires intensive GPU resources, thus, w
 
 For detail, please refer to [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/bert_bilstm_crf_ner_training.ipynb)
 
+In each epoch of the training process, there are accuracy table of each entity shown below. Please note the accuracy of English entity will be lower than average level given the limited of sample size in training dataset. User can increase the accuracy by providing your own labeled dataset and increasing the portion of English labeled entity in training dataset.
+
 #### Name Entity accuracy of model training
 ![](pic/model_accuracy_result.JPG)
 
