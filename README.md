@@ -2,6 +2,8 @@
 
 This repository aims to implement Name Entity Recognition (NER) work based on google's pretrained BERT model and BiLSTM-CRF network! 
 
+The model strucuture is reproduction of this repository : https://github.com/hertz-pj/BERT-BiLSTM-CRF-NER-pytorch
+
 This mode design is focusing on handling Chinese data from ETNET financial news and lifestyle financial articles. For textual data outside these scopes, e.g. ETNET DIVA and SoIN, etc., pleease retrain the model with relevant corpus.
 
 This project is built on Python3.7 or above
@@ -96,14 +98,23 @@ User can  modify the name entity categories if the domain application is non-fin
     率 I-TERM
     。 O
 
+User can use the follow annotation tools to produce your own dataset:
+1. https://prodi.gy/features/named-entity-recognition
+2. https://github.com/doccano/doccano
 
+Please provide clear definition your own name entity categories before labelling.
 
+For the whole dataset in [data folder](https://github.com/etnetapp-dev/nlp_NER_model/tree/master/data) , the labelling process was taken about 2.5 months to complete.
+
+After data annotation, please split the whole dataset of BIO format into train.txt and dev.txt. By default, the train/dev split is 80%/20%. The ratio can be adjusted according to your requirements.
+
+After split off dataset, please use the the section 7.4 of [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/bert_bilstm_crf_ner_training.ipynb) which can produce the [label.txt](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/data/labels.txt) by taking input of [train.zip](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/data/train.zip)
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #### Pre-trained model downloaded and saved
-[download_transformers_models_iipynb.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/download_transformers_models_iipynb.ipynb)
+[download_transformers_models_iipynb.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/download_transformers_models_iipynb.ipynb)
 
 ### Pretrained model set and relevant file after downloaded
 ![](pic/pretrain_bert_modelset.JPG)
@@ -112,7 +123,9 @@ User can  modify the name entity categories if the domain application is non-fin
 #### Model training
 The training of BERT-Bi-LSTM-CRF model requires intensive GPU resources, thus, we strongly suggest to use google colab as training platform and please select the GPU instance of in colab before training and download the APEX package in order to speed up the training processing.
 
-For detail, please refer to [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/bert_bilstm_crf_ner_training.ipynb)
+For detail, please refer to [bert_bilstm_crf_ner_training.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/bert_bilstm_crf_ner_training.ipynb)
+
+In each epoch of the training process, there are accuracy table of each entity shown below. Please note the accuracy of English entity will be lower than average level given the limited of sample size in training dataset. User can increase the accuracy by providing your own labeled dataset and increasing the portion of English labeled entity in training dataset.
 
 #### Name Entity accuracy of model training
 ![](pic/model_accuracy_result.JPG)
@@ -124,7 +137,7 @@ For detail, please refer to [bert_bilstm_crf_ner_training.ipynb](https://github.
 
  
 #### Model conversion from fp32 to fp16
-[convert_model_to_fp16.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/convert_model_to_fp16.ipynb)
+[convert_model_to_fp16.ipynb](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/convert_model_to_fp16.ipynb)
 
 BERT-base is model contains 110M parameters which is large to deploy in production environment with no-GPU resources. To reduce the resource consumption, we adopt post-training quantization technique by changing model precision (from FP32 (32-bit floating point) to P16 (16-bit floating point)) which can compress and speed-up model inferernce speed.
 
@@ -132,4 +145,4 @@ After the change of precision, the model size is reduced from more than ~700M to
 
 
 #### Deployment
-[deployment.py](https://github.com/etnetapp-dev/nlp_NER_model/deployment.py)
+[deployment.py](https://github.com/etnetapp-dev/nlp_NER_model/blob/master/deployment.py)
