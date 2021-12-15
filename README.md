@@ -18,6 +18,14 @@ For deployment, the model take string of sentence with no more than 128 characte
 For sentences with more than 128 characters, please split off the sentences by delimiters (e.g. full-stop or comma) or by truncating the characters after the 128th index before imputting procedure.
  
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### workflow of model training
+![](pic/nlp_ner_training.jpg)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ### workflow of model deployment
+![](pic/nlp_ner_deployments.jpg)
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Name Entity definition
 ![](pic/ner_desc.JPG)
  
